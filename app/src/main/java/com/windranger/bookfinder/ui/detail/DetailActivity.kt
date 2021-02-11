@@ -1,20 +1,18 @@
 package com.windranger.bookfinder.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.viewbinding.library.activity.viewBinding
 import com.windranger.bookfinder.R
 import com.windranger.bookfinder.base.BaseActivity
 import com.windranger.bookfinder.databinding.ActivityDetailBinding
 import com.windranger.bookfinder.util.setToolbar
 
 class DetailActivity : BaseActivity() {
-    private lateinit var binding: ActivityDetailBinding
+    private val binding by viewBinding<ActivityDetailBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         setToolbar("Book Details", binding.toolbarLayout)
     }
