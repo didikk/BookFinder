@@ -3,12 +3,12 @@ package com.windranger.bookfinder.ui.main
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.windranger.bookfinder.base.BaseActivity
 import com.windranger.bookfinder.base.DataState
 import com.windranger.bookfinder.databinding.ActivityMainBinding
+import com.windranger.bookfinder.models.Book
 import com.windranger.bookfinder.ui.bookmark.BookmarkActivity
 import com.windranger.bookfinder.ui.detail.DetailActivity
 import com.windranger.bookfinder.util.gone
@@ -77,6 +77,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun openDetail(data: BookModel) {
-        launchActivity<DetailActivity>()
+        launchActivity<DetailActivity> {
+            putExtra(EXTRA_DATA, Book.fromBookModel(data))
+        }
     }
 }
