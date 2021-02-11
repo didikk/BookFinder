@@ -2,7 +2,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="267dp"
+    android:layout_height="287dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
@@ -15,7 +16,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivCover"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:scaleType="centerCrop"
             android:src="@drawable/sample_book"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +29,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/opensans_semibold"
             android:maxLines="2"
-            android:text="No Friend but the Mountains"
+            tools:text="No Friend but the Mountains"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/ivCover" />
@@ -40,16 +41,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/opensans_semibold"
-            android:text="Behrouz Boochani"
+            tools:text="Behrouz Boochani"
             android:textColor="@color/softBlack"
             android:textSize="12sp"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
         <TextView
+            android:id="@+id/tvCategory"
             android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Biography"
+            tools:text="Biography"
             android:textColor="@color/softBlack"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

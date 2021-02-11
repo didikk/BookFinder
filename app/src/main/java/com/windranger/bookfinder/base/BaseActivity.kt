@@ -17,4 +17,8 @@ abstract class BaseActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
+    companion object {
+        const val EXTRA_DATA = "data"
+    }
 }

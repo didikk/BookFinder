@@ -10,5 +10,6 @@ data class BookModel(
     val rating: Float,
     val publishedDate: String,
     val link: String,
-    val cover: String
+    val cover: String,
+    val description: String?,
 )

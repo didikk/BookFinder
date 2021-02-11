@@ -18,7 +18,8 @@ class BookResponseMapper : Mapper<BookResponse, List<BookModel>> {
                     ratingsCount,
                     publishedDate ?: "",
                     previewLink,
-                    imageLinks?.thumbnail ?: ""
+                    imageLinks?.thumbnail?.replace("http", "https") ?: "",
+                    description ?: ""
                 )
             }
         }

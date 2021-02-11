@@ -18,6 +18,6 @@ dependencies {
 
     // Koin for Kotlin
     implementation libs.koin
-
     implementation project(path: ':domain')
+
 }

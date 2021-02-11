@@ -9,10 +9,11 @@ import com.windranger.bookfinder.ui.detail.DetailActivity
 import com.windranger.bookfinder.ui.main.BookAdapter
 import com.windranger.bookfinder.util.launchActivity
 import com.windranger.bookfinder.util.setToolbar
+import com.windranger.domain.models.BookModel
 
 class BookmarkActivity : BaseActivity() {
     private val binding by viewBinding<ActivityBookmarkBinding>()
-    private val bookAdapter by lazy { BookAdapter { openDetail() } }
+    private val bookAdapter by lazy { BookAdapter { openDetail(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +27,9 @@ class BookmarkActivity : BaseActivity() {
             layoutManager = GridLayoutManager(context, 2)
             adapter = bookAdapter
         }
-        bookAdapter.submitList(listOf("1", "2", "3", "4", "5", "6"))
     }
 
-    private fun openDetail() {
+    private fun openDetail(data: BookModel) {
         launchActivity<DetailActivity>()
     }
 }

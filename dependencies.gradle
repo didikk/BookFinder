@@ -1,5 +1,11 @@
 ext {
-    rxjava_version = '3.0.10'
+    version_code = 1
+    version_name = "1.0.0"
+
+    androidMinSdkVersion = 16
+    androidTargetSdkVersion = 30
+    androidCompileSdkVersion = 30
+    androidBuildToolsVersion = "30.0.1"
 
     koin_version = '2.2.2'
 

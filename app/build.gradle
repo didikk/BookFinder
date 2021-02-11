@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
 
     defaultConfig {
         applicationId "com.windranger.bookfinder"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode version_code
+        versionName version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -61,11 +61,14 @@ dependencies {
     // Simple view binding
     implementation 'com.github.yogacp:android-viewbinding:1.0.2'
 
+    // Image loading
+    implementation 'io.coil-kt:coil:1.1.1'
+
     // Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    implementation project(path: ':domain')
     implementation project(path: ':data')
+    implementation project(path: ':domain')
 
     testImplementation libs.junit
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
