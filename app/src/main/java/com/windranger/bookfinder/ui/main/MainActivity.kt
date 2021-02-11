@@ -1,15 +1,21 @@
 package com.windranger.bookfinder.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.windranger.bookfinder.databinding.ActivityMainBinding
 import com.windranger.bookfinder.ui.bookmark.BookmarkActivity
 import com.windranger.bookfinder.ui.detail.DetailActivity
 import com.windranger.bookfinder.util.launchActivity
+import com.windranger.domain.models.BookModel
+import org.koin.android.ext.android.inject
+import timber.log.Timber
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainView {
     private lateinit var binding: ActivityMainBinding
+
+    private val presenter by inject<MainPresenter>()
+
     private val bookAdapter by lazy { BookAdapter { openDetail() } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +24,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initUI()
+
+        presenter.attachView(this)
+        presenter.getBooks()
+    }
+
+    override fun onDestroy() {
+        presenter.detachView()
+        super.onDestroy()
+    }
+
+    override fun setData(data: List<BookModel>) {
+        Timber.d("setData: $data")
+    }
+
+    override fun showLoading() {
+        Timber.d("loading")
+    }
+
+    override fun hideLoading() {
+        Timber.d("finish loading")
+    }
+
+    override fun showMessage(message: String) {
+        Timber.d("message: $message")
     }
 
     private fun initUI() {

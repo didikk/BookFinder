@@ -34,6 +34,7 @@
             app:layout_constraintTop_toBottomOf="@id/ivCover" />
 
         <TextView
+            android:maxLines="1"
             android:id="@+id/tvAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,6 +46,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
         <TextView
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Biography"
@@ -52,13 +54,6 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
