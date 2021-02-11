@@ -13,7 +13,4 @@ dependencies {
 
     // Koin for Kotlin
     implementation libs.koin
-
-    // RxJava
-    implementation libs.rxjava
 }

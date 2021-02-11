@@ -9,7 +9,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -28,7 +27,7 @@ val netModule = module {
 fun createOkHttpClient(
     cache: Cache, loggingInterceptor: HttpLoggingInterceptor,
     cacheInterceptor: Interceptor,
-    offlineCacheInterceptor: Interceptor
+    offlineCacheInterceptor: Interceptor,
 ): OkHttpClient {
 
     return OkHttpClient.Builder()
@@ -46,7 +45,6 @@ fun createRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
     val BASE_URL = "https://www.googleapis.com/books/v1/"
     return Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .baseUrl(BASE_URL)
         .client(okHttpClient)
         .build()

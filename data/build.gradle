@@ -15,13 +15,9 @@ dependencies {
     implementation libs.retrofit
     implementation libs.gson_converter
     implementation libs.logging_interceptor
-    implementation libs.rxadapter
 
     // Koin for Kotlin
     implementation libs.koin
-
-    // RxJava
-    implementation libs.rxjava
 
     implementation project(path: ':domain')
 }

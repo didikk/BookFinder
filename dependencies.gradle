@@ -6,7 +6,6 @@ ext {
     retrofit_version = '2.9.0'
     gson_converter_version = '2.4.0'
     logging_interceptor_version = '3.14.6'
-    rxadapter_version = '2.9.0'
 
     timber_version = '4.7.1'
 
@@ -15,16 +14,12 @@ ext {
     libs = [
             kotlin_std_lib     : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
 
-            rxjava             : "io.reactivex.rxjava3:rxjava:$rxjava_version",
-
             koin               : "org.koin:koin-core:$koin_version",
-            koin_android       : "org.koin:koin-android:$koin_version",
 
             // Networking
             retrofit           : "com.squareup.retrofit2:retrofit:$retrofit_version",
             gson_converter     : "com.squareup.retrofit2:converter-gson:$gson_converter_version",
             logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version",
-            rxadapter          : "com.squareup.retrofit2:adapter-rxjava3:$rxadapter_version",
 
             // Logging
             timber             : "com.jakewharton.timber:timber:$timber_version",

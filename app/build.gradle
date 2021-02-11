@@ -51,12 +51,12 @@ dependencies {
 
     // Koin for Kotlin
     implementation libs.koin
-    implementation libs.koin_android
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 
-    // RxJava
-    implementation libs.rxjava
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+    //LifeCycle
+    implementation 'androidx.lifecycle:lifecycle-common:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
 
     // Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'

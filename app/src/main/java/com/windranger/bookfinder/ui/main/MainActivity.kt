@@ -7,15 +7,11 @@ import com.windranger.bookfinder.databinding.ActivityMainBinding
 import com.windranger.bookfinder.ui.bookmark.BookmarkActivity
 import com.windranger.bookfinder.ui.detail.DetailActivity
 import com.windranger.bookfinder.util.launchActivity
-import com.windranger.domain.models.BookModel
-import org.koin.android.ext.android.inject
-import timber.log.Timber
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
-    private val presenter by inject<MainPresenter>()
-
+    private val viewModel by viewModel<MainVM>()
     private val bookAdapter by lazy { BookAdapter { openDetail() } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,29 +21,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         initUI()
 
-        presenter.attachView(this)
-        presenter.getBooks()
-    }
-
-    override fun onDestroy() {
-        presenter.detachView()
-        super.onDestroy()
-    }
-
-    override fun setData(data: List<BookModel>) {
-        Timber.d("setData: $data")
-    }
-
-    override fun showLoading() {
-        Timber.d("loading")
-    }
-
-    override fun hideLoading() {
-        Timber.d("finish loading")
-    }
-
-    override fun showMessage(message: String) {
-        Timber.d("message: $message")
+        viewModel.getBooks()
     }
 
     private fun initUI() {
