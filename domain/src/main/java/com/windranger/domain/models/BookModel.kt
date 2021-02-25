@@ -1,7 +1,13 @@
 package com.windranger.domain.models
 
+import io.objectbox.annotation.Entity
+import io.objectbox.annotation.Id
+import io.objectbox.annotation.Index
+
+@Entity
 data class BookModel(
-    val id: String,
+    @Id var id: Long = 0,
+    @Index val uid: String,
     val title: String,
     val author: String,
     val category: String,

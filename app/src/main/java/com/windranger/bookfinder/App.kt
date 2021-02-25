@@ -3,6 +3,7 @@ package com.windranger.bookfinder
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
+import com.windranger.bookfinder.di.appModule
 import com.windranger.bookfinder.di.cacheModule
 import com.windranger.bookfinder.di.vmModule
 import com.windranger.data.di.mapperModule
@@ -29,7 +30,8 @@ class App : Application() {
                     mapperModule,
                     repoModule,
                     useCaseModule,
-                    vmModule
+                    vmModule,
+                    appModule
                 )
             )
         }

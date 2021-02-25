@@ -9,6 +9,7 @@ class BookResponseMapper : Mapper<BookResponse, List<BookModel>> {
         from.items.mapTo(list) { item ->
             with(item.volumeInfo) {
                 BookModel(
+                    0,
                     item.id,
                     title,
                     authors?.get(0) ?: "",

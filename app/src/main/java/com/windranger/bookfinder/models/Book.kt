@@ -6,7 +6,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Book(
-    val id: String,
+    val id: Long,
+    val uid: String,
     val title: String,
     val author: String,
     val category: String,
@@ -22,6 +23,7 @@ data class Book(
     fun toBookModel(): BookModel {
         return BookModel(
             id,
+            uid,
             title,
             author,
             category,
@@ -40,6 +42,7 @@ data class Book(
             with(from) {
                 return Book(
                     id,
+                    uid,
                     title,
                     author,
                     category,

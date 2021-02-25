@@ -5,5 +5,5 @@ import com.windranger.domain.repositories.BookRepo
 import org.koin.dsl.module
 
 val repoModule = module {
-    single<BookRepo> { BookRepoImpl(get(), get()) }
+    single<BookRepo> { BookRepoImpl(get(), get(), get()) }
 }

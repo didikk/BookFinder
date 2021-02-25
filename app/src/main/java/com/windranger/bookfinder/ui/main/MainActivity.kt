@@ -27,6 +27,8 @@ class MainActivity : BaseActivity() {
 
         initUI()
         observeData()
+
+        viewModel.getBooks("harry potter")
     }
 
     private fun initUI() {
