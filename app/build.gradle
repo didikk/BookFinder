@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'io.objectbox'
+    id "io.gitlab.arturbosch.detekt" version "1.16.0-RC3"
 }
 
 android {

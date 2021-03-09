@@ -5,6 +5,7 @@ import android.viewbinding.library.activity.viewBinding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.windranger.bookfinder.base.BaseActivity
 import com.windranger.bookfinder.databinding.ActivityBookmarkBinding
+import com.windranger.bookfinder.models.Book
 import com.windranger.bookfinder.ui.detail.DetailActivity
 import com.windranger.bookfinder.ui.main.BookAdapter
 import com.windranger.bookfinder.util.launchActivity
@@ -41,6 +42,8 @@ class BookmarkActivity : BaseActivity() {
     }
 
     private fun openDetail(data: BookModel) {
-        launchActivity<DetailActivity>()
+        launchActivity<DetailActivity> {
+            putExtra(EXTRA_DATA, Book.fromBookModel(data))
+        }
     }
 }
