@@ -16,6 +16,7 @@ ext {
     timber_version = '4.7.1'
 
     junit_version = '4.13.1'
+    mockito_version = '3.8.0'
 
     libs = [
             kotlin_std_lib     : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
@@ -31,6 +32,7 @@ ext {
             timber             : "com.jakewharton.timber:timber:$timber_version",
 
             // Testing
-            junit              : "junit:junit:$junit_version"
+            junit              : "junit:junit:$junit_version",
+            mockito            : "org.mockito:mockito-core:$mockito_version"
     ]
 }
