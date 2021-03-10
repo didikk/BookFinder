@@ -17,6 +17,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.16.0-RC3")
+}
+
 apply from: 'dependencies.gradle'
 
 allprojects {
@@ -29,4 +33,9 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+detekt {
+    toolVersion = "1.16.0-RC3"
+    config = files("config/detekt/detekt.yml")
 }

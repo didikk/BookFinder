@@ -3,6 +3,7 @@ plugins {
     id 'kotlin'
     id 'kotlin-kapt'
     id 'io.objectbox'
+    id 'io.gitlab.arturbosch.detekt'
 }
 
 java {

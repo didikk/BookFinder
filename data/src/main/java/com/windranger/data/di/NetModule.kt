@@ -42,6 +42,7 @@ fun createOkHttpClient(
 }
 
 fun createRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+    @Suppress("VariableNaming")
     val BASE_URL = "https://www.googleapis.com/books/v1/"
     return Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create(gson))
